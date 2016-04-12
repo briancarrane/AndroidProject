@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Restaurant Reservation</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="restaurants_array">
+        <item>BroadWay</item>
+        <item>River Side</item>
+        <item>Little Italy</item>
+        <item>Molly Fultons</item>
+        <item>Roof Top</item>
+    </string-array>
+</resources>
