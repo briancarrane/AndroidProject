@@ -4,22 +4,53 @@
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@drawable/theme"
+    >
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Make a Reservation"
-        android:id="@+id/txtReservationCreator"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp" />
-
-    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtSpinner"
+        android:text="Welcome to Local reservations!"
+        android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp" />
+        android:textColor="@color/accent_material_light"
+        android:textSize="@dimen/abc_action_button_min_height_material"
+        android:layout_weight="0.1"
+        android:textStyle="bold|italic"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:textIsSelectable="false" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make a Reservaton"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:typeface="normal"
+        android:width="@dimen/abc_dialog_fixed_width_major"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Reservations"
+        android:id="@+id/button2"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:width="@dimen/abc_dialog_fixed_width_major"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel Reservations"
+        android:id="@+id/button3"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:width="@dimen/abc_dialog_fixed_width_major"
+        android:typeface="normal"
+        android:textSize="20dp" />
 </LinearLayout>

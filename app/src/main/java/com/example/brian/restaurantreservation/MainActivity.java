@@ -1,56 +1,64 @@
 package com.example.brian.restaurantreservation;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.*;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    DataBaseHelper myDb;
+    private static Button button_sbm;
+    private static Button button_sbm2;
+    private static Button button_sbm3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        Spinner spinner = (Spinner) findViewById(R.id.txtSpinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.restaurants_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        myDb = new DataBaseHelper(this);
     }
-    public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
+    public void onClickButtonListener(){
+        button_sbm = (Button)findViewById(R.id.button);
+        button_sbm.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent("com.example.brian.restaurantreservation.SecondActivity");
+                        startActivity(intent);
 
-
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int pos, long id) {
-            // An item was selected. You can retrieve the selected item using
-            // parent.getItemAtPosition(pos)
-        }
-
-        public void onNothingSelected(AdapterView<?> parent) {
-            // Another interface callback
-        }
+                    }
+                }
+        );
     }
+    public void onClickButton2Listener(){
+        button_sbm2 = (Button)findViewById(R.id.button2);
+        button_sbm2.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent("com.example.brian.restaurantreservation.ThirdActivity");
+                        startActivity(intent);
+
+                    }
+                }
+        );
+    }
+    public void onClickButton3Listener(){
+        button_sbm3 = (Button)findViewById(R.id.button3);
+        button_sbm3.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent("com.example.brian.restaurantreservation.ThirdActivity");
+                        startActivity(intent);
+
+                    }
+                }
+        );
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,3 +82,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
